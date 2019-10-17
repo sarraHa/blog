@@ -21,7 +21,7 @@
 ?>
 <p>
     <strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>
-    (<?= "<a href=\"index.php?action=updateCommentView&amp;postId=".$post['id']."&amp;idComment=".$comment['id']."&amp;author=".$comment['author']."\">modifier</a>" ?>) 
+    (<em><?= "<a href=\"index.php?action=updateCommentView&amp;postId=".$post['id']."&amp;idComment=".$comment['id']."&amp;author=".$comment['author']."\">modifier</a>" ?></em>) 
 </p>
 <p>
     <?= nl2br(htmlspecialchars($comment['comment'])) ?>

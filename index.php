@@ -31,7 +31,7 @@ try { // On essaie de faire des choses
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }elseif ($_GET['action'] == 'updateComment') {
-            if (isset($_GET['idComment']) && $_GET['idComment'] > 0) {
+            if (isset($_GET['postId']) && isset($_GET['idComment']) && $_GET['idComment'] > 0) {
             
                 updateComment($_GET['postId'], $_GET['idComment'], $_POST['comment'] );
             }
