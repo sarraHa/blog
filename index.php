@@ -1,4 +1,5 @@
 <?php
+
 require('controller/frontend.php');
 
 try { // On essaie de faire des choses
@@ -29,6 +30,29 @@ try { // On essaie de faire des choses
                 // Autre exception
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
+        }elseif ($_GET['action'] == 'updateComment') {
+            if (isset($_GET['idComment']) && $_GET['idComment'] > 0) {
+            
+                updateComment($_GET['postId'], $_GET['idComment'], $_POST['comment'] );
+            }
+            else {
+                // Autre exception
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        }elseif ($_GET['action'] == 'updateCommentView') {
+            if (isset($_GET['idComment']) && $_GET['idComment'] > 0) {
+                if (!empty($_GET['author'])) {
+                    updateCommentView($_GET['postId'],$_GET['idComment'], $_GET['author']);
+                }
+                else {
+                    // Autre exception
+                    throw new Exception('Tous les champs ne sont pas remplis !');
+                }
+            }
+            else {
+                // Autre exception
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
         }
     }
     else {
@@ -37,5 +61,5 @@ try { // On essaie de faire des choses
 }
 catch(Exception $e) { // S'il y a eu une erreur, alors...
     $errorMessage = $e->getMessage();    
-    require('view/errorView.php');
+    require('view/frontend/errorView.php');
 }
