@@ -1,6 +1,6 @@
 
 * Vous pouvez utiliser le fichier __blog.sql__ pour créer la base de données __blog__
-
+* le fichier principale est __index.php__ 
 ******* A modifier *******
 
 * dans le fichier __Manager__ dans  __Blog\Model\frontend__ merci de modifier la fonction __dbConnect()__
